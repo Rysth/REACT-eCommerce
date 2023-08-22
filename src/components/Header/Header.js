@@ -1,5 +1,39 @@
 import React, { useState } from 'react';
+import NavLink from '../NavLink/NavLink';
 import './Header.css';
+
+const linkArray = [
+  {
+    ID: 'link-1',
+    text: 'Home',
+    classData: 'header-link',
+    path: '/',
+  },
+  {
+    ID: 'link-2',
+    text: 'Brands',
+    classData: 'header-link',
+    path: '/',
+  },
+  {
+    ID: 'link-3',
+    text: 'Products',
+    classData: 'header-link',
+    path: '/',
+  },
+  {
+    ID: 'link-4',
+    text: 'Contact',
+    classData: 'header-link',
+    path: '/',
+  },
+  {
+    ID: 'link-5',
+    text: 'About',
+    classData: 'header-link',
+    path: '/',
+  },
+];
 
 function Header() {
   /* Handle de Mobile Menu */
@@ -18,21 +52,15 @@ function Header() {
             <i className={open ? 'fa-solid fa-close color-white' : 'fa-solid fa-bars'} />
           </button>
           <nav className={open ? 'header-nav d-flex' : 'header-nav d-none'}>
-            <a className="header-link" href="/">
-              Home
-            </a>
-            <a className="header-link" href="/">
-              Brands
-            </a>
-            <a className="header-link" href="/">
-              Products
-            </a>
-            <a className="header-link" href="/">
-              Contact
-            </a>
-            <a className="header-link" href="/">
-              About
-            </a>
+            {linkArray.map((item) => (
+              <NavLink
+                key={item.ID}
+                text={item.text}
+                classData={item.classData}
+                path={item.path}
+                handleData={handleMobileMenu}
+              />
+            ))}
           </nav>
         </div>
       </div>
