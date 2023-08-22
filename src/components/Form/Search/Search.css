@@ -10,6 +10,11 @@
   gap: 1em;
 }
 
+.form-input,
+.form-button {
+  font-size: 0.95rem;
+}
+
 .form-input {
   width: 90%;
   border: none;
@@ -25,11 +30,6 @@
   padding: 0.75em;
   border-radius: 0.5em;
   color: var(--CL-neutral-white);
-}
-
-.form-input,
-.form-button {
-  font-size: 0.95rem;
 }
 
 @media (max-width: 950px) {
