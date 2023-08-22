@@ -1,5 +1,8 @@
 .header {
-  position: sticky;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   padding: 1em 0;
   top: 0;
 }
@@ -13,6 +16,10 @@
 .header-upper {
   align-items: center;
   gap: 0.25em;
+}
+
+.header-upper > * {
+  color: var(--CL-neutral-white);
 }
 
 .header-icon {
@@ -29,6 +36,7 @@
   font-size: 2rem;
   background: none;
   border: none;
+  color: var(--CL-neutral-white);
 }
 
 .header-nav {
@@ -93,12 +101,16 @@
 
   .header-link:hover {
     transform: scale(1.2);
-    color: var(--CL-neutral-black);
+    color: var(--CL-neutral-white);
   }
 
   .header-lower {
     display: flex;
     gap: 1em;
+  }
+
+  .header-lower > * {
+    color: var(--CL-neutral-white);
   }
 
   .header-button {

@@ -2,7 +2,7 @@
   --CL-primary: #383638;
   --CL-primary-blue: #3858d6;
   --CL-primary-darker: #0b0b0b;
-  --CL-primary-blue-25: #3858d6d5;
+  --CL-primary-blue-25: #3858d6e8;
   --CL-secondary: #f6f6f6;
   --CL-secondary-darker: #8b8e99;
   --CL-neutral-white: #fff;
@@ -17,6 +17,13 @@ body {
 
 button {
   cursor: pointer;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
 }
 
 .app {
