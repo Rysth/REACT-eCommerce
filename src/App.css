@@ -3,13 +3,10 @@
   --CL-primary-blue: #3858d6;
   --CL-primary-darker: #0b0b0b;
   --CL-primary-blue-25: #3858d6d5;
-
   --CL-secondary: #f6f6f6;
   --CL-secondary-darker: #8b8e99;
-
-  --CL-neutral-white: #ffffff;
+  --CL-neutral-white: #fff;
   --CL-neutral-black: #000;
-
   --FF-primary: 'Poppins', sans-serif;
   --FF-secondary: 'Inter', sans-serif;
 }
