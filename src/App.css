@@ -18,9 +18,14 @@ body {
   font-family: var(--FF-primary);
 }
 
+button {
+  cursor: pointer;
+}
+
 .app {
   height: 100vh;
   position: relative;
+  width: 100%;
 }
 
 .container {

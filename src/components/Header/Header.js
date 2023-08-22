@@ -48,7 +48,7 @@ function Header() {
           <h1 className="header-title">SmartCommerce</h1>
         </header>
         <div className="header-middle">
-          <button className="header-button" type="button" onClick={handleMobileMenu}>
+          <button className="header-button toggle" type="button" onClick={handleMobileMenu}>
             <i className={open ? 'fa-solid fa-close color-white' : 'fa-solid fa-bars'} />
           </button>
           <nav className={open ? 'header-nav d-flex' : 'header-nav d-none'}>
@@ -62,6 +62,17 @@ function Header() {
               />
             ))}
           </nav>
+        </div>
+        <div className="header-lower">
+          <button className="header-button cart" type="button">
+            <i className="fa-solid fa-shopping-cart" />
+          </button>
+          <button className="header-button cart" type="button">
+            <i className="fa-solid fa-user" />
+          </button>
+          <button className="header-button cart" type="button">
+            <i className="fa-solid fa-search" />
+          </button>
         </div>
       </div>
     </div>

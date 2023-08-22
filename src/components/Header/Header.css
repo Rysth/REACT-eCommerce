@@ -1,5 +1,7 @@
 .header {
+  position: sticky;
   padding: 1em 0;
+  top: 0;
 }
 
 .header .container {
@@ -49,9 +51,13 @@
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
+.header-lower {
+  display: none;
+}
+
+@media (min-width: 950px) {
   .header {
-    padding: 2em 0;
+    padding: 1.5em 0;
   }
 
   .header-upper {
@@ -66,13 +72,14 @@
     font-size: 1.5rem;
   }
 
-  .header-button {
+  .header-button.toggle {
     display: none;
   }
 
   .header-nav {
     position: unset;
     background-color: transparent;
+    justify-content: center;
     padding: unset;
     gap: 1.5em;
     display: flex;
@@ -88,5 +95,14 @@
   .header-link:hover {
     transform: scale(1.2);
     color: var(--CL-neutral-black);
+  }
+
+  .header-lower {
+    display: flex;
+    gap: 1em;
+  }
+
+  .header-button {
+    font-size: 1.5rem;
   }
 }
