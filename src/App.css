@@ -32,3 +32,11 @@ body {
 .d-flex {
   display: flex;
 }
+
+.d-none {
+  display: none;
+}
+
+.color-white {
+  color: var(--CL-neutral-white);
+}
