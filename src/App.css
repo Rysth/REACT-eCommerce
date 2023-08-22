@@ -2,9 +2,43 @@
   --CL-primary: #383638;
   --CL-primary-blue: #3858d6;
   --CL-primary-darker: #0b0b0b;
+  --CL-primary-blue-25: #3858d6d5;
   --CL-secondary: #f6f6f6;
   --CL-secondary-darker: #8b8e99;
-
-  --CL-neutral-white: #ffffff;
+  --CL-neutral-white: #fff;
   --CL-neutral-black: #000;
+  --FF-primary: 'Poppins', sans-serif;
+  --FF-secondary: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--FF-primary);
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.color-white {
+  color: var(--CL-neutral-white);
 }
