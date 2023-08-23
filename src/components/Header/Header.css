@@ -1,7 +1,9 @@
 .header {
-  position: sticky;
-  padding: 1em 0;
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
+  padding: 1em 0;
 }
 
 .header .container {
@@ -13,6 +15,10 @@
 .header-upper {
   align-items: center;
   gap: 0.25em;
+}
+
+.header-upper > * {
+  color: var(--CL-neutral-white);
 }
 
 .header-icon {
@@ -29,6 +35,7 @@
   font-size: 2rem;
   background: none;
   border: none;
+  color: var(--CL-neutral-white);
 }
 
 .header-nav {
@@ -64,11 +71,11 @@
   }
 
   .header-icon {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .header-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .header-button.toggle {
@@ -93,7 +100,7 @@
 
   .header-link:hover {
     transform: scale(1.2);
-    color: var(--CL-neutral-black);
+    color: var(--CL-neutral-white);
   }
 
   .header-lower {
@@ -101,7 +108,11 @@
     gap: 1em;
   }
 
+  .header-lower > * {
+    color: var(--CL-neutral-white);
+  }
+
   .header-button {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 }
