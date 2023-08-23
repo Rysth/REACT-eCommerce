@@ -25,6 +25,7 @@
   color: var(--CL-secondary-darker);
   font-size: 0.85rem;
   margin: 0 0 2em 0;
+  line-height: 1.35;
 }
 
 .hero-image {
@@ -60,7 +61,6 @@
   .hero-text {
     font-size: 1rem;
     max-width: 50em;
-    line-height: 1.35;
   }
 
   .hero-right {
