@@ -39,11 +39,15 @@
   .hero .container {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0.5em;
+    gap: 5em;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 1;
   }
 
   .hero-left {
-    width: 35%;
     text-align: left;
   }
 
@@ -62,7 +66,6 @@
   .hero-right {
     display: grid;
     place-items: center;
-    width: 60%;
   }
 
   .hero-image {
