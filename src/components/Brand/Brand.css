@@ -1,5 +1,7 @@
 .brand {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   align-items: center;
   background-color: var(--CL-secondary);
   padding: 1.5em;
@@ -7,7 +9,6 @@
   margin: 0 0.5em;
   gap: 1em;
   border-radius: 1em;
-  height: 180px;
   pointer-events: none;
 }
 
@@ -34,6 +35,11 @@
 }
 
 @media (min-width: 768px) {
+  .brand {
+    text-align: left;
+    flex-direction: row;
+  }
+
   .brand-name {
     font-size: 2.25rem;
     margin: 0.25em 0;
