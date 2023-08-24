@@ -2,14 +2,23 @@
   display: flex;
   align-items: center;
   background-color: var(--CL-secondary);
-  padding: 2em;
+  padding: 1.5em;
   max-width: 354px;
+  margin: 0 0.5em;
   gap: 1em;
   border-radius: 1em;
+  height: 180px;
+  pointer-events: none;
+}
+
+.brand *::selection {
+  background: transparent;
 }
 
 .brand-image {
-  width: 12em;
+  height: 10em;
+  width: 20em;
+  object-fit: contain;
 }
 
 .brand-name {
@@ -20,15 +29,13 @@
 .brand-text {
   font-size: 0.9rem;
   color: var(--CL-secondary-darker);
-  line-height: 1.5;
+  line-height: 1.35;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
   .brand-name {
     font-size: 2.25rem;
-  }
-
-  .brand-text {
-    font-size: 1rem;
+    margin: 0.25em 0;
   }
 }

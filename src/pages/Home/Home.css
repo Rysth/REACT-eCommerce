@@ -1,13 +1,10 @@
 .home-brands {
-  display: grid;
-  justify-content: center;
   padding: 1em 0;
-  gap: 1em;
 }
 
 @media (min-width: 768px) {
   .home-brands {
     padding: 4em 0;
-    grid-template-columns: repeat(3, 1fr);
+    cursor: grab;
   }
 }
