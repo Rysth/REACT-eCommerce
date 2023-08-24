@@ -1,0 +1,34 @@
+.brand {
+  display: flex;
+  align-items: center;
+  background-color: var(--CL-secondary);
+  padding: 2em;
+  max-width: 354px;
+  gap: 1em;
+  border-radius: 1em;
+}
+
+.brand-image {
+  width: 12em;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  margin: 0.5em 0;
+}
+
+.brand-text {
+  font-size: 0.9rem;
+  color: var(--CL-secondary-darker);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .brand-name {
+    font-size: 2.25rem;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+}
