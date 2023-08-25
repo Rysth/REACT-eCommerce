@@ -1,0 +1,49 @@
+/* Make a Component - Product Card*/
+
+.product {
+  width: 100%;
+  max-width: 335px;
+  cursor: pointer;
+}
+
+.product-header {
+  display: grid;
+  place-items: center;
+  border-radius: 1em;
+  background-color: var(--CL-secondary);
+  height: 335px;
+  padding: 0.5em;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 15em;
+  object-fit: contain;
+}
+
+.product-body {
+  text-align: center;
+}
+
+.product-name {
+  margin: 1em 0 0.5em 0;
+}
+
+.product-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-data > * {
+  margin: 0.5em 0;
+}
+
+.product-discount {
+  color: var(--CL-secondary-darker);
+  text-decoration: line-through;
+}
+
+.product-price {
+  font-size: 1.5rem;
+}

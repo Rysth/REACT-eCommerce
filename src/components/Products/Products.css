@@ -1,0 +1,40 @@
+.products {
+  padding: 2em 0;
+}
+
+.products-header {
+  text-align: center;
+}
+
+/* Make a Component for each  - Subtitle - Title */
+
+.products-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: var(--FF-secondary);
+  color: var(--CL-primary-blue);
+}
+
+.products-title {
+  margin: 0.25em 0;
+}
+
+.products-content {
+  padding: 2.3em 0;
+  display: grid;
+  place-items: center;
+  gap: 1em;
+  row-gap: 3em;
+}
+
+@media (min-width: 950px) {
+  .products-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .products-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

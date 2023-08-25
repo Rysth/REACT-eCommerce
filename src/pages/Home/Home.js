@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import Hero from '../../components/Hero/Hero';
 import Brand from '../../components/Brand/Brand';
 import brandsArray from '../../components/Brand/BrandImages';
+import Products from '../../components/Products/Products';
 import 'react-multi-carousel/lib/styles.css';
 import './Home.css';
 
@@ -42,6 +43,7 @@ function Home() {
             />
           ))}
         </Carousel>
+        <Products />
       </div>
     </div>
   );
