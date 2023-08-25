@@ -1,0 +1,6 @@
+.section-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: var(--FF-secondary);
+  color: var(--CL-primary-blue);
+}

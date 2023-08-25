@@ -1,14 +1,16 @@
 import React from 'react';
 import Product from '../../components/Product/Product';
 import productsArray from './Data/Information';
+import Title from '../../components/Section/Title/Title';
+import Subtitle from '../../components/Section/Subtitle/Subtitle';
 import './Products.css';
 
 function Products() {
   return (
     <section className="products">
       <header className="products-header">
-        <p className="products-subtitle">Find your favourite smart watch</p>
-        <h2 className="products-title">Our Lastest Products</h2>
+        <Subtitle text="Find your favourite smart watch." />
+        <Title text="Our Latest Products" />
       </header>
       <div className="products-content">
         {productsArray.map((product) => (

@@ -6,23 +6,9 @@
   text-align: center;
 }
 
-/* Make a Component for each  - Subtitle - Title */
-
-.products-subtitle {
-  margin: 0;
-  font-size: 0.9rem;
-  font-family: var(--FF-secondary);
-  color: var(--CL-primary-blue);
-}
-
-.products-title {
-  margin: 0.25em 0;
-}
-
 .products-content {
   padding: 2.3em 0;
   display: grid;
-  place-items: center;
   gap: 3em;
 }
 

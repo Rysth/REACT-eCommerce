@@ -61,6 +61,14 @@
     transition: transform 0.25s;
   }
 
+  .product-header {
+    transition: 0.25s;
+  }
+
+  .product:hover .product-header {
+    border-radius: 1em 1em 0 0;
+  }
+
   .product:hover .product-image {
     transform: scale(1.15);
   }
