@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavLink from '../NavLink/NavLink';
 import './Header.css';
 
@@ -42,6 +42,11 @@ function Header() {
   const handleMenu = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (open) document.body.style.overflow = 'hidden';
+    if (!open) document.body.style.overflow = 'unset';
+  }, [open]);
 
   return (
     <div className="header">
