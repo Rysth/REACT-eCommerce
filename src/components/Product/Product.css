@@ -2,8 +2,8 @@
 
 .product {
   width: 100%;
-  max-width: 335px;
   cursor: pointer;
+  border-radius: 1em;
 }
 
 .product-header {
@@ -46,4 +46,22 @@
 
 .product-price {
   font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .product {
+    transition: box-shadow 0.25s;
+  }
+
+  .product:hover {
+    box-shadow: 0 5px 5px var(--CL-light);
+  }
+
+  .product-image {
+    transition: transform 0.25s;
+  }
+
+  .product:hover .product-image {
+    transform: scale(1.15);
+  }
 }

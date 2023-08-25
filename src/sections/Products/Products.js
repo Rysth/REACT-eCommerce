@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './Product/Product';
+import Product from '../../components/Product/Product';
 import productsArray from './Data/Information';
 import './Products.css';
 
