@@ -1,3 +1,10 @@
-.home-s {
-  width: 500px;
+.home-brands {
+  padding: 1em 0;
+}
+
+@media (min-width: 768px) {
+  .home-brands {
+    padding: 4em 0;
+    cursor: grab;
+  }
 }
