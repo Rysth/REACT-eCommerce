@@ -6,7 +6,14 @@ function Search() {
     <form action="" className="form">
       <div className="form-group">
         <label htmlFor="searchBar" className="form-label search">
-          <input className="form-input" type="text" placeholder="Find the best brands" required />
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Find the best brands"
+            name="searchBar"
+            id="searchBar"
+            required
+          />
           <button className="form-button" type="submit">
             Search
           </button>

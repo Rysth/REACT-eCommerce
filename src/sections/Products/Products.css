@@ -1,0 +1,25 @@
+.products {
+  padding: 2em 0;
+}
+
+.products-header {
+  text-align: center;
+}
+
+.products-content {
+  padding: 2.3em 0;
+  display: grid;
+  gap: 3em;
+}
+
+@media (min-width: 950px) {
+  .products-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .products-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,6 +1,6 @@
-import BrandOne from '../../assets/images/brands/preview-1.png';
-import BrandTwo from '../../assets/images/brands/preview-2.png';
-import BrandThree from '../../assets/images/brands/preview-3.png';
+import BrandOne from '../../../assets/images/brands/preview-1.png';
+import BrandTwo from '../../../assets/images/brands/preview-2.png';
+import BrandThree from '../../../assets/images/brands/preview-3.png';
 
 const brandsArray = [
   {
