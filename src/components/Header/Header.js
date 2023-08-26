@@ -12,11 +12,11 @@ const linkArray = [
   },
   {
     ID: 'link-2',
-    text: 'Brands',
+    text: 'Cart',
     classData: 'header-link',
-    path: '/',
+    path: '/cart',
   },
-  {
+  /* {
     ID: 'link-3',
     text: 'Products',
     classData: 'header-link',
@@ -33,7 +33,7 @@ const linkArray = [
     text: 'About',
     classData: 'header-link',
     path: '/',
-  },
+  }, */
 ];
 
 function Header() {

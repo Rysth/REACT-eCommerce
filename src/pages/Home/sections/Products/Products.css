@@ -9,7 +9,9 @@
 .products-content {
   padding: 2.3em 0;
   display: grid;
-  gap: 3em;
+  gap: 1em;
+  row-gap: 3em;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .products-actions {
@@ -27,7 +29,7 @@
 
 @media (min-width: 768px) {
   .products-content {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .products-button {
@@ -41,6 +43,6 @@
 
 @media (min-width: 1200px) {
   .products-content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }

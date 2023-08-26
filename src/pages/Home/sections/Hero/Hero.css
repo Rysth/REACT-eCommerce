@@ -8,6 +8,7 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  height: 90%;
 }
 
 .hero-left {
@@ -40,7 +41,6 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 5em;
-    height: 90%;
   }
 
   .hero-left,

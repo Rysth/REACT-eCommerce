@@ -20,7 +20,7 @@ function Product(
   return (
     <div className="product">
       <div className="product-header">
-        <img src={imagePath} alt="" className="product-image" />
+        <img loading="lazy" src={imagePath} alt="" className="product-image" />
       </div>
       <div className="product-body">
         <h3 className="product-name">{name}</h3>

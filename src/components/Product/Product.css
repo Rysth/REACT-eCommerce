@@ -10,13 +10,12 @@
   place-items: center;
   border-radius: 1em;
   background-color: var(--CL-secondary);
-  height: 335px;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .product-image {
   width: 100%;
-  max-width: 15em;
+  max-width: 8em;
   object-fit: contain;
   cursor: pointer;
 }
@@ -26,14 +25,19 @@
 }
 
 .product-name {
+  font-size: 0.9rem;
   margin: 1em 0 0.5em 0;
+}
+
+.product-rate {
+  font-size: 0.75rem;
 }
 
 .product-data {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
+  gap: 0.25em;
 }
 
 .product-data > * {
@@ -43,10 +47,11 @@
 .product-discount {
   color: var(--CL-secondary-darker);
   text-decoration: line-through;
+  font-size: 0.9rem;
 }
 
 .product-price {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .product-actions {
@@ -55,12 +60,13 @@
 }
 
 .product-button {
-  padding: 1em;
+  padding: 0.75em 1em;
   font-size: 0.9rem;
   background-color: var(--CL-secondary-darker);
   color: var(--CL-neutral-white);
   border: none;
   border-radius: 0.5em;
+  transition: 0.15s;
 }
 
 @media (min-width: 768px) {
@@ -81,10 +87,18 @@
   }
 
   .product-image:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
+  }
+
+  .product-price {
+    font-size: 1.25rem;
   }
 
   .product-button:hover {
     background-color: var(--CL-primary-darker);
+  }
+
+  .product-button:active {
+    transform: scale(0.95);
   }
 }
