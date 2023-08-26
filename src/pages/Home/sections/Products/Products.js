@@ -1,8 +1,8 @@
 import React from 'react';
-import Product from '../../components/Product/Product';
+import Product from '../../../../components/Product/Product';
 import productsArray from './Data/Information';
-import Title from '../../components/Section/Title/Title';
-import Subtitle from '../../components/Section/Subtitle/Subtitle';
+import Title from '../../../../components/Section/Title/Title';
+import Subtitle from '../../../../components/Section/Subtitle/Subtitle';
 import './Products.css';
 
 function Products() {
@@ -22,6 +22,11 @@ function Products() {
             discount={product.discount}
           />
         ))}
+      </div>
+      <div className="products-actions">
+        <button type="button" className="products-button">
+          View More
+        </button>
       </div>
     </section>
   );

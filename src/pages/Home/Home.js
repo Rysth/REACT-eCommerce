@@ -1,7 +1,7 @@
 import React from 'react';
-import Hero from '../../sections/Hero/Hero';
-import Brands from '../../sections/Brands/Brands';
-import Products from '../../sections/Products/Products';
+import Hero from './sections/Hero/Hero';
+import Brands from './sections/Brands/Brands';
+import Products from './sections/Products/Products';
 
 function Home() {
   return (

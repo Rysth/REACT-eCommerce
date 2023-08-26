@@ -83,12 +83,6 @@ function Header() {
           <button className="header-button cart" type="button">
             <i className="fa-solid fa-shopping-cart" />
           </button>
-          <button className="header-button cart" type="button">
-            <i className="fa-solid fa-user" />
-          </button>
-          <button className="header-button cart" type="button">
-            <i className="fa-solid fa-search" />
-          </button>
         </div>
       </div>
     </div>

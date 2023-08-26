@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import Brand from '../../components/Brand/Brand';
+import Brand from '../../../../components/Brand/Brand';
 import brandsArray from './Data/Information';
 import 'react-multi-carousel/lib/styles.css';
 import './Brands.css';

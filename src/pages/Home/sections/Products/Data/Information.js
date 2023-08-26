@@ -1,9 +1,9 @@
-import ProductOne from '../../../assets/images/products/product-1.png';
-import ProductTwo from '../../../assets/images/products/product-2.png';
-import ProductThree from '../../../assets/images/products/product-3.png';
-import ProductFour from '../../../assets/images/products/product-4.png';
-import ProductFive from '../../../assets/images/products/product-5.png';
-import ProductSix from '../../../assets/images/products/product-6.png';
+import ProductOne from '../../../../../assets/images/products/product-1.png';
+import ProductTwo from '../../../../../assets/images/products/product-2.png';
+import ProductThree from '../../../../../assets/images/products/product-3.png';
+import ProductFour from '../../../../../assets/images/products/product-4.png';
+import ProductFive from '../../../../../assets/images/products/product-5.png';
+import ProductSix from '../../../../../assets/images/products/product-6.png';
 
 const productsArray = [
   {
