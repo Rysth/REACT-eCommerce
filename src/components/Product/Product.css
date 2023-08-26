@@ -2,7 +2,6 @@
 
 .product {
   width: 100%;
-  cursor: pointer;
   border-radius: 1em;
 }
 
@@ -19,6 +18,7 @@
   width: 100%;
   max-width: 15em;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .product-body {
@@ -49,13 +49,23 @@
   font-size: 1.5rem;
 }
 
+.product-actions {
+  text-align: center;
+  margin: 0.5em 0 0 0;
+}
+
+.product-button {
+  padding: 1em;
+  font-size: 0.9rem;
+  background-color: var(--CL-secondary-darker);
+  color: var(--CL-neutral-white);
+  border: none;
+  border-radius: 0.5em;
+}
+
 @media (min-width: 768px) {
   .product {
     transition: box-shadow 0.25s;
-  }
-
-  .product:hover {
-    box-shadow: 0 5px 5px var(--CL-light);
   }
 
   .product-image {
@@ -70,7 +80,11 @@
     border-radius: 1em 1em 0 0;
   }
 
-  .product:hover .product-image {
+  .product-image:hover {
     transform: scale(1.15);
+  }
+
+  .product-button:hover {
+    background-color: var(--CL-primary-darker);
   }
 }

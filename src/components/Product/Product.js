@@ -1,5 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { headerActions } from '../../redux/Header/HeaderSlice';
 import './Product.css';
 
 function Product(
@@ -11,6 +13,10 @@ function Product(
     discount,
   },
 ) {
+  const dispatch = useDispatch();
+  const handleCartItems = () => {
+    dispatch(headerActions.incrementCounter());
+  };
   return (
     <div className="product">
       <div className="product-header">
@@ -29,6 +35,15 @@ function Product(
           <p className="product-discount">{price}</p>
           <h4 className="product-price">{discount}</h4>
         </div>
+      </div>
+      <div className="product-actions">
+        <button
+          type="button"
+          className="product-button"
+          onClick={handleCartItems}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

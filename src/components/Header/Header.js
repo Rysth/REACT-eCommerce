@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import NavLink from '../NavLink/NavLink';
 import './Header.css';
 
@@ -43,6 +44,8 @@ function Header() {
     setOpen(false);
   };
 
+  const { cartItems } = useSelector((store) => store.header);
+
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
     if (!open) document.body.style.overflow = 'unset';
@@ -82,7 +85,7 @@ function Header() {
         <div className="header-lower">
           <button className="header-button cart" type="button">
             <i className="fa-solid fa-shopping-cart" />
-            <span className="header-cart counter">10</span>
+            <span className="header-cart counter">{cartItems}</span>
           </button>
         </div>
       </div>

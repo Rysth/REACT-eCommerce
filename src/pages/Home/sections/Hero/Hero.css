@@ -1,6 +1,6 @@
 .hero {
-  height: 725px;
-  background: linear-gradient(135deg, var(--CL-primary) 1%, var(--CL-primary-darker) 30%);
+  height: 595px;
+  background-color: var(--CL-primary-darker);
 }
 
 .hero .container {
@@ -8,7 +8,6 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .hero-left {
@@ -34,13 +33,14 @@
 
 @media (min-width: 950px) {
   .hero {
-    height: 800px;
+    height: 675px;
   }
 
   .hero .container {
     flex-direction: row;
     justify-content: space-between;
     gap: 5em;
+    height: 90%;
   }
 
   .hero-left,
