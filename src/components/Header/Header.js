@@ -82,6 +82,7 @@ function Header() {
         <div className="header-lower">
           <button className="header-button cart" type="button">
             <i className="fa-solid fa-shopping-cart" />
+            <span className="header-cart counter">10</span>
           </button>
         </div>
       </div>
