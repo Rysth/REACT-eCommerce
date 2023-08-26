@@ -29,7 +29,7 @@
 
 @media (min-width: 768px) {
   .products-content {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .products-button {
@@ -43,6 +43,6 @@
 
 @media (min-width: 1200px) {
   .products-content {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }

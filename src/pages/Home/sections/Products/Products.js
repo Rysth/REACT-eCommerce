@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../../../redux/Products/ProductsSlice';
 import Product from '../../../../components/Product/Product';
-import productsArray from './Data/Information';
 import Title from '../../../../components/Section/Title/Title';
 import Subtitle from '../../../../components/Section/Subtitle/Subtitle';
 import './Products.css';
 
 function Products() {
+  const dispatch = useDispatch();
+  const { productsArray } = useSelector((store) => store.products);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   return (
     <section className="products">
       <header className="products-header">
@@ -15,11 +23,11 @@ function Products() {
       <div className="products-content">
         {productsArray.map((product) => (
           <Product
-            key={product.ID}
-            imagePath={product.imagePath}
-            name={product.name}
+            key={product.id}
+            imagePath={product.image}
+            name={product.title}
             price={product.price}
-            discount={product.discount}
+            discount={(product.price * 0.15 + product.price).toFixed(2)}
           />
         ))}
       </div>

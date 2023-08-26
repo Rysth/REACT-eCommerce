@@ -32,8 +32,8 @@ function Product(
           <i className="product-rate fa-solid fa-star" />
         </div>
         <div className="product-data">
-          <p className="product-discount">{price}</p>
-          <h4 className="product-price">{discount}</h4>
+          <p className="product-discount">{`$${discount}`}</p>
+          <h4 className="product-price">{`$${price}`}</h4>
         </div>
       </div>
       <div className="product-actions">
