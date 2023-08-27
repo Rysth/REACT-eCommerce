@@ -12,6 +12,12 @@
   --FF-secondary: 'Inter', sans-serif;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--FF-primary);
 }
@@ -29,8 +35,6 @@ iframe {
 
 .app {
   height: 100%;
-  position: relative;
-  width: 100%;
 }
 
 .container {
