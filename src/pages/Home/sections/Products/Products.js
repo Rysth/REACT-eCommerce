@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../../../redux/Products/ProductsSlice';
+import {
+  fetchAllProducts,
+  fetchMoreProducts,
+} from '../../../../redux/Products/ProductsSlice';
 import Product from '../../../../components/Product/Product';
 import Title from '../../../../components/Section/Title/Title';
 import Subtitle from '../../../../components/Section/Subtitle/Subtitle';
@@ -11,8 +14,14 @@ function Products() {
   const { productsArray } = useSelector((store) => store.products);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchAllProducts());
   }, [dispatch]);
+
+  useEffect(() => {}, [productsArray]);
+
+  const handleViewMore = () => {
+    dispatch(fetchMoreProducts());
+  };
 
   return (
     <section className="products">
@@ -32,7 +41,11 @@ function Products() {
         ))}
       </div>
       <div className="products-actions">
-        <button type="button" className="products-button">
+        <button
+          type="button"
+          className="products-button"
+          onClick={handleViewMore}
+        >
           View More
         </button>
       </div>

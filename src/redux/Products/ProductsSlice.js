@@ -1,11 +1,25 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const fetchProducts = createAsyncThunk(
+export const fetchAllProducts = createAsyncThunk(
   'products/fetchAllProducts',
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('https://fakestoreapi.com/products');
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
+export const fetchMoreProducts = createAsyncThunk(
+  'products/fetchMoreProducts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        'https://fakestoreapi.com/products?limit=8',
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -24,9 +38,11 @@ const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+    builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
       state.productsArray = action.payload;
-      console.log(state.productsArray);
+    });
+    builder.addCase(fetchMoreProducts.fulfilled, (state, action) => {
+      state.productsArray.push(...action.payload);
     });
   },
 });

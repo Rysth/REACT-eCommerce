@@ -39,6 +39,10 @@
   .products-button:hover {
     background-color: var(--CL-primary-darker);
   }
+
+  .products-button:active {
+    transform: scale(0.9);
+  }
 }
 
 @media (min-width: 1200px) {
