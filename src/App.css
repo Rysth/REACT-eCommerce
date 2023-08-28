@@ -54,3 +54,7 @@ iframe {
 .color-white {
   color: var(--CL-neutral-white);
 }
+
+.fw-bold {
+  font-weight: bold;
+}
