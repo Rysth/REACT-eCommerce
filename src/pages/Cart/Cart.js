@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import CartItem from '../../components/Cart/Item/CartItem';
@@ -10,6 +10,9 @@ function Cart() {
   const handleNavigation = () => {
     navigator('/');
   };
+
+  useEffect(() => {}, [cartItems]);
+
   return (
     <div className="cart">
       <div className="cart-content container">
@@ -32,9 +35,11 @@ function Cart() {
               {cartItems.map((item) => (
                 <CartItem
                   key={item.id}
+                  ID={item.id}
                   imagePath={item.image}
                   name={item.title}
                   price={item.price}
+                  quantity={item.quantity}
                 />
               ))}
             </div>

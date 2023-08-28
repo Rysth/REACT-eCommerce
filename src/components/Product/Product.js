@@ -16,9 +16,8 @@ function Product(
 ) {
   const dispatch = useDispatch();
   const handleCartItems = () => {
-    dispatch(fetchSingleProduct(ID)).then(
-      dispatch(cartActions.incrementCounter()),
-    );
+    dispatch(cartActions.incrementCounter());
+    dispatch(fetchSingleProduct(ID));
   };
   return (
     <div className="product">

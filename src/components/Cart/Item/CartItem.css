@@ -8,7 +8,6 @@
 }
 
 .cart-heading,
-.cart-body,
 .cart-counter,
 .cart-information {
   display: flex;
@@ -26,6 +25,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.cart-body {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
 }
 
 .cart-heading,
@@ -60,7 +64,7 @@
 
 @media (min-width: 768px) {
   .cart-item {
-    grid-template-columns: 1fr 180px;
+    grid-template-columns: 1fr 200px;
   }
 
   .cart-name {

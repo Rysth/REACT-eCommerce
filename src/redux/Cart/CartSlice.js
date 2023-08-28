@@ -27,11 +27,47 @@ const cartSlice = createSlice({
     incrementCounter(state) {
       state.cartCounter += 1;
     },
+    incrementItemCounter(state, action) {
+      const item = state.cartItems.find((item) => item.id === action.payload);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+    decrementItemCounter(state, action) {
+      const item = state.cartItems.find((item) => item.id === action.payload);
+      if (item && item.quantity > 0) {
+        item.quantity -= 1;
+        state.cartCounter -= 1; // Decrement the cart counter
+      }
+
+      if (item.quantity === 0) {
+        const updatedArray = state.cartItems.filter(
+          (item) => item.id !== action.payload,
+        );
+        state.cartItems = updatedArray;
+      }
+    },
+    removeItem(state, action) {
+      const removedItem = state.cartItems.find(
+        (item) => item.id === action.payload,
+      );
+      const updatedArray = state.cartItems.filter(
+        (item) => item.id !== action.payload,
+      );
+      state.cartCounter -= removedItem.quantity;
+      state.cartItems = updatedArray;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
-      console.log(action.payload);
-      state.cartItems.push(action.payload);
+      const item = state.cartItems.find(
+        (item) => item.id === action.payload.id,
+      );
+      if (!item) {
+        state.cartItems.push({ ...action.payload, quantity: 1 });
+      } else {
+        item.quantity += 1;
+      }
     });
   },
 });
