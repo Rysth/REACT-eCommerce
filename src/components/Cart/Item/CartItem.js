@@ -1,30 +1,37 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import './CartItem.css';
 import { cartActions } from '../../../redux/Cart/CartSlice';
 
-function CartItem({
+function CartItem(
   /* prettier-ignore */
-  ID,
-  imagePath,
-  name,
-  price,
-  quantity,
-}) {
+  {
+    ID,
+    imagePath,
+    name,
+    price,
+    quantity,
+  },
+) {
   const dispatch = useDispatch();
 
+  /* prettier-ignore */
+  const { incrementItemCounter, decrementItemCounter, removeItem } = cartActions;
+
   const handleItemIncrement = () => {
-    dispatch(cartActions.incrementItemCounter(ID));
+    dispatch(incrementItemCounter(ID));
   };
 
   const handleItemDecrement = () => {
-    dispatch(cartActions.decrementItemCounter(ID));
+    dispatch(decrementItemCounter(ID));
   };
 
   const handleItemRemoval = () => {
-    dispatch(cartActions.removeItem(ID));
+    dispatch(removeItem(ID));
   };
+
+  const calculateSubtotal = () => (price * quantity).toFixed(2);
 
   return (
     <div className="cart-item">
@@ -38,14 +45,14 @@ function CartItem({
           <div className="cart-actions">
             <button
               type="button"
-              className="cart-button arrow "
+              className="cart-button arrow"
               onClick={handleItemIncrement}
             >
-              <i className="cart-button  icon fa-solid fa-chevron-up" />
+              <i className="cart-button icon fa-solid fa-chevron-up" />
             </button>
             <button
               type="button"
-              className="cart-button arrow "
+              className="cart-button arrow"
               onClick={handleItemDecrement}
             >
               <i className="cart-button icon fa-solid fa-chevron-down" />
@@ -53,7 +60,7 @@ function CartItem({
           </div>
         </div>
         <div className="cart-information">
-          <p className="cart-subtotal">{`$${(price * quantity).toFixed(2)}`}</p>
+          <p className="cart-subtotal">{`$${calculateSubtotal()}`}</p>
           <button
             type="button"
             className="cart-button delete"
@@ -68,11 +75,11 @@ function CartItem({
 }
 
 CartItem.propTypes = {
-  ID: PropType.number.isRequired,
-  imagePath: PropType.string.isRequired,
-  name: PropType.string.isRequired,
-  price: PropType.number.isRequired,
-  quantity: PropType.number.isRequired,
+  ID: PropTypes.number.isRequired,
+  imagePath: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default CartItem;

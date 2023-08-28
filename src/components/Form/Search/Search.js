@@ -3,7 +3,7 @@ import './Search.css';
 
 function Search() {
   return (
-    <form action="" className="form">
+    <form className="form">
       <div className="form-group">
         <label htmlFor="searchBar" className="form-label search">
           <input

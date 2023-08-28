@@ -16,40 +16,21 @@ const linkArray = [
     classData: 'header-link',
     path: '/cart',
   },
-  /* {
-    ID: 'link-3',
-    text: 'Products',
-    classData: 'header-link',
-    path: '/',
-  },
-  {
-    ID: 'link-4',
-    text: 'Contact',
-    classData: 'header-link',
-    path: '/',
-  },
-  {
-    ID: 'link-5',
-    text: 'About',
-    classData: 'header-link',
-    path: '/',
-  }, */
+  // ... (other links)
 ];
 
 function Header() {
-  /* Handle de Mobile Menu */
-  const [open, setOpen] = useState(false);
-  const handleMobileMenu = () => setOpen((prevOpen) => !prevOpen);
-  const handleMenu = () => {
-    setOpen(false);
-  };
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { cartCounter } = useSelector((store) => store.cart);
 
+  const handleMobileMenu = () => {
+    setMobileMenuOpen((prevOpen) => !prevOpen);
+  };
+
   useEffect(() => {
-    if (open) document.body.style.overflow = 'hidden';
-    if (!open) document.body.style.overflow = 'unset';
-  }, [open]);
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
+  }, [isMobileMenuOpen]);
 
   return (
     <div className="header">
@@ -65,19 +46,21 @@ function Header() {
             onClick={handleMobileMenu}
           >
             <i
-              className={
-                open ? 'fa-solid fa-close color-white' : 'fa-solid fa-bars'
-              }
+              className={`fa-solid ${
+                isMobileMenuOpen ? 'fa-close' : 'fa-bars'
+              } color-white`}
             />
           </button>
-          <nav className={open ? 'header-nav d-flex' : 'header-nav d-none'}>
+          <nav
+            className={`header-nav ${isMobileMenuOpen ? 'd-flex' : 'd-none'}`}
+          >
             {linkArray.map((item) => (
               <NavLink
                 key={item.ID}
                 text={item.text}
                 classData={item.classData}
                 path={item.path}
-                handleData={handleMenu}
+                handleData={() => setMobileMenuOpen(false)}
               />
             ))}
           </nav>
