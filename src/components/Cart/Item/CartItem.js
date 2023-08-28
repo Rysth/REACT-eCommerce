@@ -1,15 +1,13 @@
 import React from 'react';
-import HeroImage from '../../../assets/images/hero.png';
+import PropType from 'prop-types';
 import './CartItem.css';
 
-function CartItem() {
+function CartItem({ imagePath, name, price }) {
   return (
     <div className="cart-item">
       <div className="cart-heading">
-        <img className="cart-image" src={HeroImage} alt="Hero" />
-        <h3 className="cart-name">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h3>
+        <img className="cart-image" src={imagePath} alt="Hero" />
+        <h3 className="cart-name">{name}</h3>
       </div>
       <div className="cart-body">
         <div className="cart-counter">
@@ -24,7 +22,7 @@ function CartItem() {
           </div>
         </div>
         <div className="cart-information">
-          <p className="cart-subtotal">$600</p>
+          <p className="cart-subtotal">{`$${price}`}</p>
           <button type="button" className="cart-button delete">
             <i className="cart-button icon fa-solid fa-trash" />
           </button>
@@ -33,5 +31,11 @@ function CartItem() {
     </div>
   );
 }
+
+CartItem.propTypes = {
+  imagePath: PropType.string.isRequired,
+  name: PropType.string.isRequired,
+  price: PropType.number.isRequired,
+};
 
 export default CartItem;

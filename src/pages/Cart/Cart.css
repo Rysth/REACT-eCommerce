@@ -37,6 +37,7 @@
   margin: 1em 0;
   overflow-y: auto;
   align-items: baseline;
+  overflow-x: auto;
 }
 
 .form-group.cart {

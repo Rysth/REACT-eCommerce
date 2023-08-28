@@ -33,6 +33,7 @@ function Products() {
         {productsArray.map((product) => (
           <Product
             key={product.id}
+            ID={product.id}
             imagePath={product.image}
             name={product.title}
             price={product.price}

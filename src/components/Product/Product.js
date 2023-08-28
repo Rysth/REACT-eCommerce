@@ -1,12 +1,13 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { headerActions } from '../../redux/Header/HeaderSlice';
+import { fetchSingleProduct, cartActions } from '../../redux/Cart/CartSlice';
 import './Product.css';
 
 function Product(
   /* prettier-ignore */
   {
+    ID,
     imagePath,
     name,
     price,
@@ -15,7 +16,9 @@ function Product(
 ) {
   const dispatch = useDispatch();
   const handleCartItems = () => {
-    dispatch(headerActions.incrementCounter());
+    dispatch(fetchSingleProduct(ID)).then(
+      dispatch(cartActions.incrementCounter()),
+    );
   };
   return (
     <div className="product">
@@ -50,9 +53,10 @@ function Product(
 }
 
 Product.propTypes = {
+  ID: PropType.number.isRequired,
   imagePath: PropType.string.isRequired,
   name: PropType.string.isRequired,
-  price: PropType.string.isRequired,
+  price: PropType.number.isRequired,
   discount: PropType.string.isRequired,
 };
 

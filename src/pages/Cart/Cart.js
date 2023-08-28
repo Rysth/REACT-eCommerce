@@ -1,10 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import CartItem from '../../components/Cart/Item/CartItem';
 import './Cart.css';
 
 function Cart() {
   const navigator = useNavigate();
+  const { cartItems } = useSelector((store) => store.cart);
   const handleNavigation = () => {
     navigator('/');
   };
@@ -27,13 +29,14 @@ function Cart() {
             <h2 className="cart-title">Shopping Cart</h2>
             <p className="cart-subtitle">You have 3 items in your cart</p>
             <div className="cart-layout">
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
+              {cartItems.map((item) => (
+                <CartItem
+                  key={item.id}
+                  imagePath={item.image}
+                  name={item.title}
+                  price={item.price}
+                />
+              ))}
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@ function Header() {
     setOpen(false);
   };
 
-  const { cartItems } = useSelector((store) => store.header);
+  const { cartCounter } = useSelector((store) => store.cart);
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
@@ -85,7 +85,7 @@ function Header() {
         <div className="header-lower">
           <button className="header-button cart" type="button">
             <i className="fa-solid fa-shopping-cart" />
-            <span className="header-cart counter">{cartItems}</span>
+            <span className="header-cart counter">{cartCounter}</span>
           </button>
         </div>
       </div>
