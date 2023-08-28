@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
-import Search from '../../components/Form/Search/Search';
-import HeroImage from '../../assets/images/hero.png';
+import Search from '../../../../components/Form/Search/Search';
+import HeroImage from '../../../../assets/images/hero.png';
 
 function Hero() {
   return (

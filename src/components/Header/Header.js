@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import NavLink from '../NavLink/NavLink';
 import './Header.css';
 
@@ -11,11 +12,11 @@ const linkArray = [
   },
   {
     ID: 'link-2',
-    text: 'Brands',
+    text: 'Cart',
     classData: 'header-link',
-    path: '/',
+    path: '/cart',
   },
-  {
+  /* {
     ID: 'link-3',
     text: 'Products',
     classData: 'header-link',
@@ -32,7 +33,7 @@ const linkArray = [
     text: 'About',
     classData: 'header-link',
     path: '/',
-  },
+  }, */
 ];
 
 function Header() {
@@ -42,6 +43,8 @@ function Header() {
   const handleMenu = () => {
     setOpen(false);
   };
+
+  const { cartCounter } = useSelector((store) => store.cart);
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
@@ -82,12 +85,7 @@ function Header() {
         <div className="header-lower">
           <button className="header-button cart" type="button">
             <i className="fa-solid fa-shopping-cart" />
-          </button>
-          <button className="header-button cart" type="button">
-            <i className="fa-solid fa-user" />
-          </button>
-          <button className="header-button cart" type="button">
-            <i className="fa-solid fa-search" />
+            <span className="header-cart counter">{cartCounter}</span>
           </button>
         </div>
       </div>
