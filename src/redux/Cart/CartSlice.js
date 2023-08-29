@@ -17,9 +17,22 @@ export const fetchSingleProduct = createAsyncThunk(
   },
 );
 
+const storedCartCounter = localStorage.getItem('cartCounter');
+const storedCartItems = localStorage.getItem('cartItems');
+const storedCartSubTotal = localStorage.getItem('cartSubtotal');
+
 const initialState = {
-  cartCounter: 0,
-  cartItems: [],
+  cartItems: storedCartItems !== null ? JSON.parse(storedCartItems) : [],
+  cartCounter:
+    storedCartCounter !== null ? Number.parseInt(storedCartCounter, 10) : 0,
+  cartSubtotal:
+    storedCartSubTotal !== null ? Number.parseFloat(storedCartCounter) : 0,
+};
+
+const handleLocalStorageCart = (state) => {
+  localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+  localStorage.setItem('cartCounter', state.cartCounter);
+  localStorage.setItem('cartSubtotal', state.cartSubtotal);
 };
 
 const cartSlice = createSlice({
@@ -28,13 +41,15 @@ const cartSlice = createSlice({
   reducers: {
     incrementCounter(state) {
       state.cartCounter += 1;
+      handleLocalStorageCart(state);
     },
     incrementItemCounter(state, action) {
       const item = state.cartItems.find((item) => item.id === action.payload);
-      if (item) {
+      if (item && item.quantity < 5) {
         item.quantity += 1;
         state.cartCounter += 1;
       }
+      handleLocalStorageCart(state);
     },
     decrementItemCounter(state, action) {
       const item = state.cartItems.find((item) => item.id === action.payload);
@@ -48,7 +63,9 @@ const cartSlice = createSlice({
           (item) => item.id !== action.payload,
         );
         state.cartItems = updatedArray;
+        NotificationManager.info('Product Removed', 'Information', 1000);
       }
+      handleLocalStorageCart(state);
     },
     removeItem(state, action) {
       const removedItem = state.cartItems.find(
@@ -59,7 +76,20 @@ const cartSlice = createSlice({
       );
       state.cartCounter -= removedItem.quantity;
       state.cartItems = updatedArray;
+      handleLocalStorageCart(state);
       NotificationManager.info('Product Removed', 'Information', 1000);
+    },
+    calculateAllSubtotal(state) {
+      state.cartSubtotal = state.cartItems
+        .map((item) => item.quantity * item.price) // Calculate individual subtotals
+        .reduce((acc, subtotal) => acc + subtotal, 0)
+        .toFixed(2); // Sum up all subtotals
+      handleLocalStorageCart(state);
+    },
+    removeAllItems(state) {
+      state.cartItems = [];
+      state.cartCounter = 0;
+      state.cartSubtotal = 0;
     },
   },
   extraReducers: (builder) => {
@@ -72,7 +102,7 @@ const cartSlice = createSlice({
       } else {
         item.quantity += 1;
       }
-      NotificationManager.success('Product Added', 'Successfull', 1000);
+      handleLocalStorageCart(state);
     });
   },
 });
