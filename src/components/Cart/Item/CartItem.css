@@ -31,6 +31,7 @@
 .cart-body {
   display: grid;
   grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
 }
 
 .cart-heading,
@@ -50,10 +51,6 @@
 
 .cart-button.arrow {
   font-size: 0.8rem;
-}
-
-.cart-body {
-  justify-content: space-between;
 }
 
 .cart-subtotal {
