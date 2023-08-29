@@ -59,6 +59,7 @@ const cartSlice = createSlice({
       );
       state.cartCounter -= removedItem.quantity;
       state.cartItems = updatedArray;
+      NotificationManager.info('Product Removed', 'Information', 1000);
     },
   },
   extraReducers: (builder) => {
