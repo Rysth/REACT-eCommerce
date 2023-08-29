@@ -22,6 +22,7 @@ function Detail() {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     const form = event.target;
+    dispatch(cartActions.removeAllItems());
     NotificationManager.success('Email Sent', 'Successfull', 2000);
     form.reset();
   };

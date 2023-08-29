@@ -86,6 +86,11 @@ const cartSlice = createSlice({
         .toFixed(2); // Sum up all subtotals
       handleLocalStorageCart(state);
     },
+    removeAllItems(state) {
+      state.cartItems = [];
+      state.cartCounter = 0;
+      state.cartSubtotal = 0;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
