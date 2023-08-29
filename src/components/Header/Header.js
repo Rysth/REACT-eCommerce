@@ -29,8 +29,8 @@ function Header() {
     setMobileMenuOpen((prevOpen) => !prevOpen);
   };
 
-  const handleCartButton = () => {
-    navigator('/cart');
+  const handleNavigator = (path) => {
+    navigator(path);
   };
 
   useEffect(() => {
@@ -40,10 +40,14 @@ function Header() {
   return (
     <div className="header">
       <div className="container">
-        <header className="header-upper d-flex">
+        <button
+          type="button"
+          className="header-upper d-flex"
+          onClick={() => handleNavigator('/')}
+        >
           <i className="header-icon fa-solid fa-stopwatch" />
           <h1 className="header-title">SmartCommerce</h1>
-        </header>
+        </button>
         <div className="header-middle">
           <button
             className="header-button toggle"
@@ -74,7 +78,7 @@ function Header() {
           <button
             className="header-button cart"
             type="button"
-            onClick={handleCartButton}
+            onClick={() => handleNavigator('/cart')}
           >
             <i className="fa-solid fa-shopping-cart" />
             <span className="header-cart counter">{cartCounter}</span>
