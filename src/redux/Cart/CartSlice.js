@@ -48,6 +48,7 @@ const cartSlice = createSlice({
           (item) => item.id !== action.payload,
         );
         state.cartItems = updatedArray;
+        NotificationManager.info('Product Removed', 'Information', 1000);
       }
     },
     removeItem(state, action) {
