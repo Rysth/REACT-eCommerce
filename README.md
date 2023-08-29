@@ -28,9 +28,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 REACT PROJECT NAME <a name="about-project"></a>
+# 📖 REACT eCommerce <a name="about-project"></a>
 
-- **REACT PROJECT NAME** ...
+- **REACT eCommerce** is an application where users can find, add, remove, and edit products calculating the subtotal, taxes, and total in terms of quantity and price. Build with React, HTML, CSS, JavaScript, and FakeStoreAPI.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,9 +43,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Display a list of products from an API.
+- Add products to a Cart Item.
+- Calculate the Subtotal, Taxes, and Total of the products.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,8 +62,8 @@ To get a local copy up and running, follow these steps.
 Clone this repository to your desired folder:
 
 ```
-git clone https://github.com/Rysth/REACT-Template.git
-cd REACT-Template
+git clone https://github.com/Rysth/REACT-eCommerce.git
+cd REACT-eCommerce
 code . (To open VS Code Editor)
 ```
 
@@ -101,15 +101,14 @@ _Use at the end '--fix' to help you out with any error._
 👤 **John Palacios**
 
 - GitHub: [@rysthcraft](https://github.com/Rysth)
-- Linkedin: [@johnpalacios](https://www.linkedin.com/in/john-rysthcraft/)
+- Linkedin: [@johnpalacios](https://www.linkedin.com/in/john-palacios-rysthcraft/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Future Feature 1
-- Future Feature 2
-- Future Feature 3
+- Use Strapi to serve as the Headless CMS.
+- Use the project as a Template for any Commerce Type
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
