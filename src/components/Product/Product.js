@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { fetchSingleProduct, cartActions } from '../../redux/Cart/CartSlice';
+import { fetchSingleProduct } from '../../redux/Cart/CartSlice';
 import './Product.css';
 
 function Product(
@@ -16,7 +16,6 @@ function Product(
 ) {
   const dispatch = useDispatch();
   const handleCartItems = () => {
-    dispatch(cartActions.incrementCounter());
     dispatch(fetchSingleProduct(ID));
   };
 

@@ -17,9 +17,18 @@ export const fetchSingleProduct = createAsyncThunk(
   },
 );
 
+const storedCartCounter = localStorage.getItem('cartCounter');
+const storedCartItems = localStorage.getItem('cartItems');
+
 const initialState = {
-  cartCounter: 0,
-  cartItems: [],
+  cartCounter:
+    storedCartCounter !== null ? Number.parseInt(storedCartCounter, 10) : 0,
+  cartItems: storedCartItems !== null ? JSON.parse(storedCartItems) : [],
+};
+
+const handleLocalStorageCart = (state) => {
+  localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+  localStorage.setItem('cartCounter', JSON.stringify(state.cartCounter));
 };
 
 const cartSlice = createSlice({
@@ -28,6 +37,7 @@ const cartSlice = createSlice({
   reducers: {
     incrementCounter(state) {
       state.cartCounter += 1;
+      handleLocalStorageCart(state);
     },
     incrementItemCounter(state, action) {
       const item = state.cartItems.find((item) => item.id === action.payload);
@@ -35,6 +45,7 @@ const cartSlice = createSlice({
         item.quantity += 1;
         state.cartCounter += 1;
       }
+      handleLocalStorageCart(state);
     },
     decrementItemCounter(state, action) {
       const item = state.cartItems.find((item) => item.id === action.payload);
@@ -50,6 +61,7 @@ const cartSlice = createSlice({
         state.cartItems = updatedArray;
         NotificationManager.info('Product Removed', 'Information', 1000);
       }
+      handleLocalStorageCart(state);
     },
     removeItem(state, action) {
       const removedItem = state.cartItems.find(
@@ -60,6 +72,7 @@ const cartSlice = createSlice({
       );
       state.cartCounter -= removedItem.quantity;
       state.cartItems = updatedArray;
+      handleLocalStorageCart(state);
       NotificationManager.info('Product Removed', 'Information', 1000);
     },
   },
@@ -73,7 +86,9 @@ const cartSlice = createSlice({
       } else {
         item.quantity += 1;
       }
+      state.cartCounter += 1;
       NotificationManager.success('Product Added', 'Successfull', 1000);
+      handleLocalStorageCart(state);
     });
   },
 });
