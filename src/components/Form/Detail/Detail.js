@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NotificationManager } from 'react-notifications';
 import { cartActions } from '../../../redux/Cart/CartSlice';
 import './Detail.css';
 
@@ -7,11 +8,6 @@ function Detail() {
   const dispatch = useDispatch();
   const [disable, setDisable] = useState(false);
   const { cartSubtotal, cartItems } = useSelector((store) => store.cart);
-
-  useEffect(() => {
-    if (cartItems.length === 0) setDisable(true);
-    dispatch(cartActions.calculateAllSubtotal());
-  }, [cartItems, dispatch]);
 
   const calculateTaxes = useMemo(
     () => (0.12 * parseFloat(cartSubtotal)).toFixed(2),
@@ -23,8 +19,23 @@ function Detail() {
     [calculateTaxes, cartSubtotal],
   );
 
+  const handleSubmitForm = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    NotificationManager.success('Email Sent', 'Successfull', 2000);
+    form.reset();
+  };
+
+  useEffect(() => {
+    if (cartItems.length === 0) setDisable(true);
+    dispatch(cartActions.calculateAllSubtotal());
+  }, [cartItems, dispatch]);
+
   return (
-    <form className={disable ? 'form disabled' : 'form'}>
+    <form
+      className={disable ? 'form disabled' : 'form'}
+      onSubmit={handleSubmitForm}
+    >
       <h2 className="form-title">Details</h2>
       <fieldset className="form-group cart" disabled={disable}>
         <label htmlFor="name" className="form-label cart">
