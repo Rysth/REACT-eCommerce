@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { fetchSingleProduct } from '../../redux/Cart/CartSlice';
+import { NotificationManager } from 'react-notifications';
+import { fetchSingleProduct, cartActions } from '../../redux/Cart/CartSlice';
 import './Product.css';
 
 function Product(
@@ -17,6 +18,8 @@ function Product(
   const dispatch = useDispatch();
   const handleCartItems = () => {
     dispatch(fetchSingleProduct(ID));
+    dispatch(cartActions.incrementCounter());
+    NotificationManager.success('Product Added', 'Successfull', 1000);
   };
 
   return (

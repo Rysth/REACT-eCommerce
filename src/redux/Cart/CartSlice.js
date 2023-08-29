@@ -97,8 +97,6 @@ const cartSlice = createSlice({
       } else {
         item.quantity += 1;
       }
-      state.cartCounter += 1;
-      NotificationManager.success('Product Added', 'Successfull', 1000);
       handleLocalStorageCart(state);
     });
   },
