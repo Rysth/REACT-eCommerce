@@ -2,9 +2,10 @@
   border: 1px solid var(--CL-light);
   border-radius: 1.5em;
   display: grid;
-  grid-template-columns: 130px 120px;
+  grid-template-columns: 200px 180px;
   justify-content: space-between;
   padding: 0.5em;
+  width: 35em;
 }
 
 .cart-heading,
@@ -40,6 +41,7 @@
 
 .cart-quantity {
   font-weight: bold;
+  width: 1.5em;
 }
 
 .cart-actions {
@@ -65,6 +67,7 @@
 @media (min-width: 768px) {
   .cart-item {
     grid-template-columns: 1fr 200px;
+    width: 100%;
   }
 
   .cart-name {

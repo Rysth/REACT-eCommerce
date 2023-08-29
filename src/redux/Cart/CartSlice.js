@@ -1,4 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { NotificationManager } from 'react-notifications';
+
 import axios from 'axios';
 
 export const fetchSingleProduct = createAsyncThunk(
@@ -31,6 +33,7 @@ const cartSlice = createSlice({
       const item = state.cartItems.find((item) => item.id === action.payload);
       if (item) {
         item.quantity += 1;
+        state.cartCounter += 1;
       }
     },
     decrementItemCounter(state, action) {
@@ -68,6 +71,7 @@ const cartSlice = createSlice({
       } else {
         item.quantity += 1;
       }
+      NotificationManager.success('Product Added', 'Successfull', 1000);
     });
   },
 });

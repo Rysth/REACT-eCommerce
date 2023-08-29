@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import NavLink from '../NavLink/NavLink';
 import './Header.css';
 
@@ -21,11 +22,15 @@ const linkArray = [
 
 function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const navigator = useNavigate();
   const { cartCounter } = useSelector((store) => store.cart);
 
   const handleMobileMenu = () => {
     setMobileMenuOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleCartButton = () => {
+    navigator('/cart');
   };
 
   useEffect(() => {
@@ -66,7 +71,11 @@ function Header() {
           </nav>
         </div>
         <div className="header-lower">
-          <button className="header-button cart" type="button">
+          <button
+            className="header-button cart"
+            type="button"
+            onClick={handleCartButton}
+          >
             <i className="fa-solid fa-shopping-cart" />
             <span className="header-cart counter">{cartCounter}</span>
           </button>
