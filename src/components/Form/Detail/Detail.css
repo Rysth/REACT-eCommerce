@@ -1,6 +1,13 @@
+.form.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .form-group.cart {
   max-width: 100%;
   padding: 0.5em 0;
+  border: none;
+  margin: 0;
 }
 
 .cart-amount {

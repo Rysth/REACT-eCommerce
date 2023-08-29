@@ -1,13 +1,15 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../../redux/Cart/CartSlice';
 import './Detail.css';
 
 function Detail() {
   const dispatch = useDispatch();
+  const [disable, setDisable] = useState(false);
   const { cartSubtotal, cartItems } = useSelector((store) => store.cart);
 
   useEffect(() => {
+    if (cartItems.length === 0) setDisable(true);
     dispatch(cartActions.calculateAllSubtotal());
   }, [cartItems, dispatch]);
 
@@ -22,9 +24,9 @@ function Detail() {
   );
 
   return (
-    <form className="form">
+    <form className={disable ? 'form disabled' : 'form'}>
       <h2 className="form-title">Details</h2>
-      <div className="form-group cart">
+      <fieldset className="form-group cart" disabled={disable}>
         <label htmlFor="name" className="form-label cart">
           Full Name:
           <input
@@ -36,8 +38,8 @@ function Detail() {
             required
           />
         </label>
-      </div>
-      <div className="form-group cart">
+      </fieldset>
+      <fieldset className="form-group cart" disabled={disable}>
         <label htmlFor="email" className="form-label cart">
           Email:
           <input
@@ -49,8 +51,8 @@ function Detail() {
             required
           />
         </label>
-      </div>
-      <div className="form-group cart">
+      </fieldset>
+      <fieldset className="form-group cart" disabled={disable}>
         <label htmlFor="phone" className="form-label cart">
           Phone number:
           <input
@@ -62,7 +64,7 @@ function Detail() {
             required
           />
         </label>
-      </div>
+      </fieldset>
       <hr className="cart-separator" />
       <div className="form-group cart">
         <div className="cart-preview">
@@ -80,11 +82,11 @@ function Detail() {
           </div>
         </div>
       </div>
-      <div className="form-group cart">
+      <fieldset className="form-group cart" disabled={disable}>
         <button className="form-button cart" type="submit">
           Submit
         </button>
-      </div>
+      </fieldset>
     </form>
   );
 }
