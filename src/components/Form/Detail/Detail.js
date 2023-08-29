@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../../redux/Cart/CartSlice';
 import './Detail.css';
 
 function Detail() {
+  const dispatch = useDispatch();
+  const { cartSubtotal, cartItems } = useSelector((store) => store.cart);
+
+  useEffect(() => {
+    dispatch(cartActions.calculateAllSubtotal());
+  }, [cartItems, dispatch]);
+
+  const calculateTaxes = useMemo(
+    () => (0.12 * parseFloat(cartSubtotal)).toFixed(2),
+    [cartSubtotal],
+  );
+
+  const calculateTotal = useMemo(
+    () => (parseFloat(calculateTaxes) + parseFloat(cartSubtotal)).toFixed(2),
+    [calculateTaxes, cartSubtotal],
+  );
+
   return (
     <form className="form">
       <h2 className="form-title">Details</h2>
@@ -49,15 +68,15 @@ function Detail() {
         <div className="cart-preview">
           <div className="cart-amount">
             Subtotal
-            <span className="cart-number">$1,000</span>
+            <span className="cart-number">{`$${cartSubtotal}`}</span>
           </div>
           <div className="cart-amount">
             Taxes
-            <span className="cart-number">$120</span>
+            <span className="cart-number">{`$${calculateTaxes}`}</span>
           </div>
           <div className="cart-amount fw-bold">
             Total
-            <span className="cart-number fw-bold">$1,120</span>
+            <span className="cart-number fw-bold">{`$${calculateTotal}`}</span>
           </div>
         </div>
       </div>

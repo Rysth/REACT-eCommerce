@@ -19,16 +19,20 @@ export const fetchSingleProduct = createAsyncThunk(
 
 const storedCartCounter = localStorage.getItem('cartCounter');
 const storedCartItems = localStorage.getItem('cartItems');
+const storedCartSubTotal = localStorage.getItem('cartSubtotal');
 
 const initialState = {
+  cartItems: storedCartItems !== null ? JSON.parse(storedCartItems) : [],
   cartCounter:
     storedCartCounter !== null ? Number.parseInt(storedCartCounter, 10) : 0,
-  cartItems: storedCartItems !== null ? JSON.parse(storedCartItems) : [],
+  cartSubtotal:
+    storedCartSubTotal !== null ? Number.parseFloat(storedCartCounter) : 0,
 };
 
 const handleLocalStorageCart = (state) => {
   localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
-  localStorage.setItem('cartCounter', JSON.stringify(state.cartCounter));
+  localStorage.setItem('cartCounter', state.cartCounter);
+  localStorage.setItem('cartSubtotal', state.cartSubtotal);
 };
 
 const cartSlice = createSlice({
@@ -74,6 +78,13 @@ const cartSlice = createSlice({
       state.cartItems = updatedArray;
       handleLocalStorageCart(state);
       NotificationManager.info('Product Removed', 'Information', 1000);
+    },
+    calculateAllSubtotal(state) {
+      state.cartSubtotal = state.cartItems
+        .map((item) => item.quantity * item.price) // Calculate individual subtotals
+        .reduce((acc, subtotal) => acc + subtotal, 0)
+        .toFixed(2); // Sum up all subtotals
+      handleLocalStorageCart(state);
     },
   },
   extraReducers: (builder) => {
