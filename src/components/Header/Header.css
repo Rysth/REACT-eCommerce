@@ -118,6 +118,11 @@
 
   .header-button.cart {
     position: relative;
+    transition: 0.15s;
+  }
+
+  .header-button.cart:active {
+    transform: scale(0.9);
   }
 
   .header-cart.counter {
