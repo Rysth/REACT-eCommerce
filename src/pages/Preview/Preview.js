@@ -1,5 +1,6 @@
 import React from 'react';
-import ImagePreview from '../../assets/images/products/product-4.png';
+import ImageZoom from 'react-image-zooom';
+import ImagePreview from '../../assets/images/products/product-3.png';
 import './Preview.css';
 
 function Preview() {
@@ -7,7 +8,12 @@ function Preview() {
     <div className="preview">
       <div className="preview-content container">
         <picture className="preview-picture">
-          <img className="preview-image" src={ImagePreview} alt="" />
+          <ImageZoom
+            className="preview-image"
+            src={ImagePreview}
+            alt="A image to apply the ImageZoom plugin"
+            zoom="200"
+          />
         </picture>
         <div className="preview-body">
           <header className="preview-header">

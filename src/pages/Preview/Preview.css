@@ -14,9 +14,14 @@
   border-radius: 1em 1em 0 0;
 }
 
+.preview-picture figure {
+  background: none;
+}
+
 .preview-image {
   margin: 0 auto;
   width: 17em;
+  object-fit: contain;
 }
 
 .preview-body {
@@ -96,7 +101,8 @@
   }
 
   .preview-image {
-    width: 25em;
+    min-width: 65%;
+    background: none;
   }
 
   .preview-button {
