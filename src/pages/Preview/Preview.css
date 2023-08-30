@@ -14,13 +14,10 @@
   border-radius: 1em 1em 0 0;
 }
 
-.preview-picture figure {
-  background: none;
-}
-
 .preview-image {
-  margin: 0 auto;
-  width: 17em;
+  width: 100%;
+  min-height: 20em;
+  max-height: 30em;
   object-fit: contain;
 }
 
@@ -69,6 +66,7 @@
   border-radius: 0.25em;
   width: max-content;
   padding: 0.5em;
+  text-transform: uppercase;
 }
 
 .preview-text.parragraph,
@@ -89,7 +87,7 @@
   font-size: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 950px) {
   .preview-content {
     grid-template-columns: 1fr 35%;
     gap: 2em;
@@ -101,8 +99,8 @@
   }
 
   .preview-image {
-    min-width: 65%;
-    background: none;
+    max-width: 30em;
+    object-fit: contain;
   }
 
   .preview-button {
