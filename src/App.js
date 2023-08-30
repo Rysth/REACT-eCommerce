@@ -17,9 +17,9 @@ function App() {
           <Header />
           <NotificationContainer />
           <Routes>
-            <Route path="/" element={<Preview />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/preview" element={<Home />} />
+            <Route path="/preview/:id" element={<Preview />} />
           </Routes>
         </BrowserRouter>
       </Provider>

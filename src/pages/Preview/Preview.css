@@ -92,7 +92,7 @@
 @media (min-width: 768px) {
   .preview-content {
     grid-template-columns: 1fr 35%;
-    gap: 1em;
+    gap: 2em;
     height: 600px;
   }
 
@@ -127,7 +127,7 @@
   .preview-text.parragraph,
   .preview-text.category,
   .preview-text.subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .preview-text.category {

@@ -1,9 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import ImageZoom from 'react-image-zooom';
+import { NotificationManager } from 'react-notifications';
+import { useNavigate, useParams } from 'react-router-dom';
 import ImagePreview from '../../assets/images/products/product-3.png';
+import { fetchSingleProduct, cartActions } from '../../redux/Cart/CartSlice';
 import './Preview.css';
 
 function Preview() {
+  const navigator = useNavigate();
+  const handleNavigation = () => {
+    navigator('/');
+  };
+
+  const params = useParams();
+  const dispatch = useDispatch();
+  const handleCartItems = () => {
+    dispatch(fetchSingleProduct(params.id));
+    dispatch(cartActions.incrementCounter());
+    NotificationManager.success('Product Added', 'Successfull', 1000);
+  };
   return (
     <div className="preview">
       <div className="preview-content container">
@@ -11,13 +27,17 @@ function Preview() {
           <ImageZoom
             className="preview-image"
             src={ImagePreview}
-            alt="A image to apply the ImageZoom plugin"
+            alt="Product preview"
             zoom="200"
           />
         </picture>
         <div className="preview-body">
           <header className="preview-header">
-            <button type="button" className="preview-button back">
+            <button
+              type="button"
+              className="preview-button back"
+              onClick={handleNavigation}
+            >
               <i className="cart-button icon fa-solid fa-chevron-left" />
               Back
             </button>
@@ -36,7 +56,11 @@ function Preview() {
             <p className="preview-text category">Apple</p>
             <p className="preview-text category">Technology</p>
           </div>
-          <button type="button" className="preview-button cart">
+          <button
+            type="button"
+            className="preview-button cart"
+            onClick={handleCartItems}
+          >
             <i className="cart-button icon fa-solid fa-shopping-cart" />
             Add to Cart
           </button>
