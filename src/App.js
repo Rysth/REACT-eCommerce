@@ -6,6 +6,7 @@ import Store from './redux/Store';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
+import Preview from './pages/Preview/Preview';
 import 'react-notifications/lib/notifications.css';
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
           <Header />
           <NotificationContainer />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Preview />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/preview" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </Provider>
