@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { NotificationManager } from 'react-notifications';
 import { fetchSingleProduct, cartActions } from '../../redux/Cart/CartSlice';
@@ -22,11 +23,20 @@ function Product(
     NotificationManager.success('Product Added', 'Successfull', 1000);
   };
 
+  const navigator = useNavigate();
+  const handleNavigation = () => {
+    navigator(`/preview/${ID}`);
+  };
+
   return (
     <div className="product">
-      <div className="product-header">
+      <button
+        type="button"
+        className="product-header"
+        onClick={handleNavigation}
+      >
         <img loading="lazy" src={imagePath} alt="" className="product-image" />
-      </div>
+      </button>
       <div className="product-body">
         <h3 className="product-name">{name}</h3>
         <div className="product-rating">

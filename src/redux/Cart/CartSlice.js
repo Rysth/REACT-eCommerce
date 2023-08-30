@@ -63,7 +63,7 @@ const cartSlice = createSlice({
           (item) => item.id !== action.payload,
         );
         state.cartItems = updatedArray;
-        NotificationManager.info('Product Removed', 'Information', 1000);
+        NotificationManager.info('Product Removed', 'Information', 1500);
       }
       handleLocalStorageCart(state);
     },
@@ -77,7 +77,7 @@ const cartSlice = createSlice({
       state.cartCounter -= removedItem.quantity;
       state.cartItems = updatedArray;
       handleLocalStorageCart(state);
-      NotificationManager.info('Product Removed', 'Information', 1000);
+      NotificationManager.info('Product Removed', 'Information', 1500);
     },
     calculateAllSubtotal(state) {
       state.cartSubtotal = state.cartItems

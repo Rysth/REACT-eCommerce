@@ -27,10 +27,25 @@ export const fetchMoreProducts = createAsyncThunk(
   },
 );
 
+export const fetchProductByID = createAsyncThunk(
+  'products/fetchProductByID',
+  async (ID, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `https://fakestoreapi.com/products/${ID}`,
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
 const initialState = {
   productsArray: [],
   isLoading: true,
   error: '',
+  productSelected: null,
 };
 
 const productsSlice = createSlice({
@@ -43,6 +58,9 @@ const productsSlice = createSlice({
     });
     builder.addCase(fetchMoreProducts.fulfilled, (state, action) => {
       state.productsArray.push(...action.payload);
+    });
+    builder.addCase(fetchProductByID.fulfilled, (state, action) => {
+      state.productSelected = action.payload;
     });
   },
 });

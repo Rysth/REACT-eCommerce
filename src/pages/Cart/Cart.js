@@ -6,8 +6,9 @@ import CartItem from '../../components/Cart/Item/CartItem';
 import './Cart.css';
 
 function Cart() {
-  const navigator = useNavigate();
   const { cartItems } = useSelector((store) => store.cart);
+
+  const navigator = useNavigate();
   const handleNavigation = () => {
     navigator('/');
   };

@@ -13,6 +13,7 @@
   border-radius: 1em;
   background-color: var(--CL-secondary);
   padding: 1em;
+  border: none;
 }
 
 .product-image {
