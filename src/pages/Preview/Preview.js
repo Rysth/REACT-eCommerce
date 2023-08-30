@@ -23,7 +23,7 @@ function Preview() {
 
   useEffect(() => {
     dispatch(fetchProductByID(params.id));
-  }, [dispatch]);
+  }, [dispatch, params.id]);
 
   return (
     <div className="preview">
