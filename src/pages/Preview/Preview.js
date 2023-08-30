@@ -9,19 +9,20 @@ function Preview() {
         <picture className="preview-picture">
           <img className="preview-image" src={ImagePreview} alt="" />
         </picture>
-        <header className="preview-header">
-          <button type="button" className="preview-button back">
-            <i className="cart-button icon fa-solid fa-chevron-left" />
-            Continue Shopping
-          </button>
-          <hr className="preview-separator" />
-          <h2 className="preview-text title">Apple Watch III</h2>
-        </header>
         <div className="preview-body">
+          <header className="preview-header">
+            <button type="button" className="preview-button back">
+              <i className="cart-button icon fa-solid fa-chevron-left" />
+              Back
+            </button>
+            <hr className="preview-separator" />
+            <h2 className="preview-text title">Apple Watch III</h2>
+          </header>
           <p className="preview-text parragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
-            autem quaerat excepturi similique nulla dolorum ipsa veniam aut
-            tempora corrupti?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi
+            voluptatum commodi deleniti et similique atque earum delectus sed
+            inventore, reprehenderit aliquid illo cum eligendi praesentium
+            tempora neque. Illum, quaerat!
           </p>
           <h3 className="preview-text subtitle">Categories:</h3>
           <div className="preview-system">
