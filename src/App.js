@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
 import Preview from './pages/Preview/Preview';
+import Footer from './components/Footer/Footer';
 import 'react-notifications/lib/notifications.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/preview/:id" element={<Preview />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </div>
