@@ -6,7 +6,7 @@ function Footer() {
     <div className="footer">
       <div className="footer-content container">
         <p className="footer-text parragraph">Created by</p>
-        <a className="footer-text anchor" href="http://https://github.com/Rysth">
+        <a className="footer-text anchor" href="https://github.com/Rysth">
           <i className="fa-brands fa-github" />
           RysthCraft
         </a>
