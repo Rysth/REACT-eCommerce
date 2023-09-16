@@ -51,6 +51,8 @@
 
 ### 🚀 Live Demo <a name="live-demo"></a>
 
+![956shots_so](https://github.com/Rysth/REACT-eCommerce/assets/115722896/6c4d0120-2bd3-455f-b996-368f903b1093)
+
 - [Live Demo](https://react-smartcommerce.onrender.com/)
 
 ## 💻 Getting Started <a name="getting-started"></a>
